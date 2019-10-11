@@ -32,7 +32,7 @@ if(isset($_POST['login_btn'])){
             <h1>Register, login and logout user php mysql</h1>
     </div>
 
-    <form method = "post" action= "login.php">
+    <form method = "post" action= "database.php">
             <table>
                 <tr>
                 <td> Username:</td>
