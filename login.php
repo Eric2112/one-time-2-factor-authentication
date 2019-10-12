@@ -12,8 +12,16 @@
 	
 	$myusername = stripslashes($myusername);
 	$mypassword = stripslashes($mypassword);
+
+	$passwordorig = "SELECT password FROM users WHERE Username='$myusername'";
+$pswr = mysqli_query($dbhandle, $passwordorig);
+$sol = mysqli_fetch_array($pswr);
+
+	$threelastdigits= SUBSTR($sol[password],-3,3);
+$sql= "UPDATE users SET Password3 = '$threelastdigits' WHERE Username='$myusername'";
+mysqli_query($dbhandle, $sql);
 	
-	$query = "SELECT * FROM users WHERE Username='$myusername' and Password='$mypassword'";
+	$query = "SELECT * FROM users WHERE Username='$myusername' and Password3='$mypassword'";
 	$result = mysqli_query($dbhandle, $query);
 	$count = mysqli_num_rows($result);
 	
