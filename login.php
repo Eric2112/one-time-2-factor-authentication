@@ -17,7 +17,7 @@
 $pswr = mysqli_query($dbhandle, $passwordorig);
 $sol = mysqli_fetch_array($pswr);
 
-	$threelastdigits= SUBSTR($sol[password],-3,3);
+	$threelastdigits= SUBSTR($sol["password"],-3,3);
 $sql= "UPDATE users SET Password3 = '$threelastdigits' WHERE Username='$myusername'";
 mysqli_query($dbhandle, $sql);
 	
