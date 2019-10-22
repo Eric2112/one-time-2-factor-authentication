@@ -42,10 +42,10 @@ function getPhoneNumber(){
 }
 
 // handle number submission
-$app -> post('/step2', function($request, $response){
+$app ->getPhoneNumber() {
     //create verify object
     $verify = new MessageBird\Objects\Verify;
-    $verify->recipient = $request->getParsedBodyParam('number');
+    $verify->recipient = $number;
     $verify->template = "Your verification code is %token.";
     $verify->originator = 'Code';
 
