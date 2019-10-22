@@ -23,7 +23,7 @@ $container = $app ->getContainer();
 
 //register twig component on container to view templates
 $container['view'] = function(){
-    return new Slim\Views\Twig('views');
+    return new Slim\Views\Twig('frontend');
 };
 
 // initiialize & load MessageBird SDK
@@ -50,19 +50,19 @@ $app ->getPhoneNumber() {
     }
     catch( Exception $e){
         //request fails
-        return $this->view->render($response, 'step1.html.twig', [
+        return $this->view->render($response, 'wrong_user_pass.php.twig', [
             'error' => get_class($e).": ".$e->getMessage()
         ]);
     }
 
     //request successful, return to form
-    return $this->view->render($response, 'step2.html.twig', [
+    return $this->view->render($response, 'second_login.php.twig', [
         'id' => $result->getId()
     ]);
 });
 
 // check if token is correct
-$app->post('/step3', function($request, $response){
+$app->post('/second_login_success', function($request, $response){
     $id = $request->getParsedBodyParam('id');
     $token = $request->getParsedBodyParam('token');
 
@@ -71,7 +71,7 @@ $app->post('/step3', function($request, $response){
         $this->messagebird->verify->verify($id, $token);
     }catch (Exception $e){
         //request failed
-        return $this->view->render($response, 'step2.html.twig', [
+        return $this->view->render($response, 'second_login.php.twig', [
             'id' => $id,
             'error' => get_class($e). ": ".$e->getMessage();
         ]);
@@ -80,7 +80,7 @@ $app->post('/step3', function($request, $response){
     //request successful
 	 $token= "UPDATE users SET PIN ='$token' WHERE Username='$myusername'";
 		mysqli_query($dbhandle, $token);
-    return $this->view->render($response, 'step3.html.twig';)
+    return $this->view->render($response, 'second_login_success.php.twig';)
 });
 
 //start application
