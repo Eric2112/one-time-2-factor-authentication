@@ -8,6 +8,16 @@ $app = new Slim\App;
 $dotenv = new Dotenv\Dotenv(__DIR__);
 $dotenv -> load();
 
+// Acessing database
+$username = "root";
+$password = NULL;
+$hostname = "localhost";
+
+$dbhandle = mysqli_connect($hostname, $username, $password) or die("Could not connect to database");
+
+// Data base in which we will have the tables we want to access
+$selected = mysqli_select_db($dbhandle, "bank");
+
 //get container
 $container = $app ->getContainer();
 
