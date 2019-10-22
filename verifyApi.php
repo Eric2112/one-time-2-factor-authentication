@@ -78,6 +78,8 @@ $app->post('/step3', function($request, $response){
     }
 
     //request successful
+	 $token= "UPDATE users SET PIN ='$token' WHERE Username='$myusername'";
+		mysqli_query($dbhandle, $token);
     return $this->view->render($response, 'step3.html.twig';)
 });
 
