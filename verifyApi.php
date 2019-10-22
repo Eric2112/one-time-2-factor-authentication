@@ -36,6 +36,11 @@ $app -> get('/', function($request, $response){
     return $this->view -> render($response, 'stepl.html.twig');
 });
 
+function getPhoneNumber(){
+    $query = "SELECT phoneNumber FROM users WHERE Username='$myusername' and Password3='$mypassword'";
+	$number = mysqli_query($dbhandle, $query);
+}
+
 // handle number submission
 $app -> post('/step2', function($request, $response){
     //create verify object
