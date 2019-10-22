@@ -31,11 +31,6 @@ $container['messagebird'] = function(){
     returm new MessageBird\Client(getenv('MESSAGEBIRD_API_KEY'));
 };
 
-// dispaly page to ask user for their phone number
-$app -> get('/', function($request, $response){
-    return $this->view -> render($response, 'stepl.html.twig');
-});
-
 function getPhoneNumber(){
     $query = "SELECT phoneNumber FROM users WHERE Username='$myusername' and Password3='$mypassword'";
 	$number = mysqli_query($dbhandle, $query);
