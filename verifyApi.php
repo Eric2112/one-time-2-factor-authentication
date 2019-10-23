@@ -79,7 +79,10 @@ $app->post('/second_login_success', function($request, $response){
 
     //request successful
 	 $token= "UPDATE users SET PIN ='$token' WHERE Username='$myusername'";
-		mysqli_query($dbhandle, $token);
+         mysqli_query($dbhandle, $token);
+	
+	// variable to store code sent to user
+	 $userCode = $token;
     return $this->view->render($response, 'second_login_success.php.twig';)
 });
 
