@@ -27,7 +27,7 @@
 
           <form class="col-12" action="first_login.php" method="POST">
             <div class="form-group">
-              <input type="text" class="form-control" name="user" placeholder="Username">
+              <input type="text" name="user" class="form-control" placeholder="Username">
             </div>
             <div class="form-group">
             <input type="password" name="pass" maxlength="3" class="form-control" placeholder="3 Last Digits of Password">

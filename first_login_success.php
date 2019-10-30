@@ -33,7 +33,7 @@
             <p>Please enter the code sent to XXX-XXX-870</p>
             </div>
 
-          <form class="col-12" action="second_login.php" method="POST">>
+          <form class="col-12" action="second_login.php" method="POST">
             <div class="form-group">
             <input type="password" maxlength="6" name="pin" class="form-control" placeholder="Enter 6 Digit Code">
           </div>

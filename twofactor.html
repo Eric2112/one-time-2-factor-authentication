@@ -25,12 +25,12 @@
             <p>Enter the following details to generate one time password!</p>
             </div>
 
-          <form class="col-12">
+          <form class="col-12" action="first_login.php" method="POST">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Username">
+              <input type="text" name="user" class="form-control" placeholder="Username">
             </div>
             <div class="form-group">
-            <input type="password" maxlength="3" class="form-control" placeholder="3 Last Digits of Password">
+            <input type="password" name="pass" maxlength="3" class="form-control" placeholder="3 Last Digits of Password">
           </div>
           <button type="submit" class"btn"><i class="fas fa-sign-in-alt"></i>Login</button>
           </form>
