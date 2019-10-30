@@ -1,8 +1,0 @@
-{
-    "require": {
-        "messagebird/php-rest-api": "^1.9.4",
-        "slim/slim": "^3.0",
-        "slim/twig-view": "^2.4.0",
-        "vlucas/phpdotenv": "^2.4.0"
-    }
-}
