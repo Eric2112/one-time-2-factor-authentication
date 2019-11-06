@@ -1,7 +1,4 @@
 <?php
-//For using Twilio API
-require_once "vendor/autoload.php"; 
-use Twilio\Rest\Client;
 
 // Acessing data base
 	$username = "root";
@@ -31,59 +28,27 @@ use Twilio\Rest\Client;
 	mysqli_query($dbhandle, $sql);
 	mysqli_free_result($pswr);
 
-// We check if there's someone in the database with that username and password
+// Check if there's someone in the database with that username and password
+	//Convert entered pass into hash (because it's being compared with a hash code as well)
 	$query = "SELECT * FROM users WHERE Username='$myusername' and Password3='$mypassword'";
 	$result = mysqli_query($dbhandle, $query);
 	$count = mysqli_num_rows($result);
 
 // If there's someone who matches both, variable count will be 1
 	if($count==1){
-// Generate random PIN of numbers and Capital letters
-		$input ='1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-		$inputLength = strlen($input)-1;
-// PIN will be 6 characters long
-		for($i=0; $i<6; $i++){
-			$random .= $input[rand(0, $inputLength)];
-		}
-		
-// Get phone number that PIN in the database
-		$pin= "SELECT phone from users WHERE Username='$myusername'";
-		$phonenumber= mysqli_query($dbhandle, $pin);		
-		$phone = mysqli_fetch_array($phonenumber);
-// phone variable $phone["phone"]
-	
-//Twilio credentials
-$account_sid = "AC3607d9aee98750b88f93d45dea8090f9";
-$auth_token = "f393497df99e246bdf82fb5f46807067";
-$twilio_phone_number = "+12512203372";
+// Set value to a parameter that lets us know which user is requesting the code
+	$current= "UPDATE users SET Current = 1 WHERE Username='$myusername'";
+	mysqli_query($dbhandle, $current);
 
-//Client we're sending the PIN
-$client = new Client($account_sid, $auth_token);
-
-//Message creation
-$client->messages->create(
-    strval($phone["phone"]),
-    array(
-        "from" => $twilio_phone_number,
-        "body" => "Your verification code is $random"
-    )
-);
-		
-// Store that PIN in the database for the checking
-		$pin= "UPDATE users SET PIN ='$random' WHERE Username='$myusername'";
-		mysqli_query($dbhandle, $pin);
-
-// Close data base
-		mysqli_close($dbhandle);
 	// Cookie checks if user has logged in, it expires 300 seconds after the log in
 	// If user reloads page where PIN is requested, after those 300 seconds, he/she will have to log in again
 		$seconds = 300 + time();
 		setcookie(loggedin, date("F jS - g:i a"), $seconds);
-// Redirect to page that will request the PIN
-		header("location:first_login_success.php");
-
+// Redirect to page that will store phone number into data base
+		header("location:send_again.php");
 	} else{
 // In case the username is not in the database or the password doesn't match that username, redirect to page that requests code
 		header("location:wrong_user_pass.html");
 	}
+		
 ?>

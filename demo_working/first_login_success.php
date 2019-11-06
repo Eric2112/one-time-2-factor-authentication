@@ -31,7 +31,7 @@
           </div>
 		  
           <div class="col-12 textarea">
-            <p>Please enter the code sent to XXX-XXX-870</p>
+            <p>Please enter the code sent to your phone</p>
             </div>
 
           <form class="col-12" action="second_login.php" method="POST">
@@ -44,7 +44,7 @@
 
 
           <div class="col-12 twofa">
-            <a href="#">Try to send again</a>
+            <a href="send_again.php">Try to send again</a>
             </div>
 
   </div>  <!--- end of modal content-->

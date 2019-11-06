@@ -78,7 +78,7 @@
 
           <div class="col-12 twofa">
 
-            <a href="#">Try to send again</a>
+            <a href="send_again.php">Try to send again</a>
 
             </div>
 

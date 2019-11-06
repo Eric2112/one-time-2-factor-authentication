@@ -27,6 +27,12 @@
 // Pin restored to NULL by checking username, not pin (cuase other users can have same pin)
 		$pin= "UPDATE users SET PIN =NULL WHERE Username='$user'";
 		mysqli_query($dbhandle, $pin);
+//Password3 restored to null, we can store those three last digits in case user changes password
+		$password= "UPDATE users SET Password3 =NULL WHERE Username='$user'";
+		mysqli_query($dbhandle, $password);
+// Current restored to 0, the user has already logged in
+		$current= "UPDATE users SET current = 0 WHERE Username='$user'";
+		mysqli_query($dbhandle, $current);
 
 // Close data base handler
 		mysqli_close($dbhandle);
