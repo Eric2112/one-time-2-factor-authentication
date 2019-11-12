@@ -7,10 +7,25 @@ background-size: cover;
 }
 
 
+h1{
+  margin-top:25px;
+font-family: 'Roboto',sans-serif;
+font-weight: 1000;
+color: #ffff;
+}
+
+h3{
+  margin-top:25px;
+  margin-bottom:25px;
+font-family: 'Roboto',sans-serif;
+
+color: #ffff;
+}
 .main-section {
 margin: 0 auto;
 margin-top: 130px;
 padding: 0;
+padding-top:;
 
 }
 .modal-content {
@@ -36,6 +51,7 @@ padding: 0;
 
   .form-group{
     margin-bottom: 25px;
+    margin-top: 25px;
   }
 
   .form-group input{
@@ -44,6 +60,7 @@ padding: 0;
     border: 0;
     font-size: 17px;
     padding-left: 54px;
+
   }
 
   .form-group::before{
@@ -76,9 +93,36 @@ padding: 0;
       .twofa{
         padding-bottom: 8px;
       }
+      .fail-screen{
+          color: #ffff;
+      }
 
       .textarea{
         color: #fff;
         font-weight: bold;
         font-size: 18px;
       }
+
+        .register-group{
+          margin-bottom: 25px;
+          margin-top: 25px;
+        }
+
+        .register-group input{
+          height: 42px;
+          border-radius: 5px;
+          border: 0;
+          font-size: 17px;
+
+
+        }
+
+        .register-group::before{
+          font-family: 'Font Awesome\ 5 Free';
+
+          position: absolute;
+          font-size: 22px;
+          color: #555e60;
+          left: 28px;
+          padding-top: 4px;
+        }

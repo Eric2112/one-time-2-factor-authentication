@@ -7,6 +7,7 @@
 
 <!doctype html>
 
+<!doctype html>
 <html lang="en">
   <head>
     <title>Transparent Login Form with Bootstrap 4</title>
@@ -19,10 +20,12 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://m.w3newbie.com/you-tube.css">
   </head>
-
   <body>
+
+
+<form class="col-12" action="first_login.php" method="POST">
     <div class="modal-dialog text-center">
-      <div class="col-sm-8 main-section">
+      <div class="col-sm-10 main-section">
         <div class="modal-content">
 
           <div class="col-12 user-img">
@@ -32,6 +35,12 @@
           <div class="col-12 textarea">
             <p>You have succesfully logged into your account!</p>
             </div>
+
+            <div class="col-12 logout">
+              <button type="submit" class"btn"><i class="fas fa-sign-in-alt"></i>Log Out</button>
+</form>
+
+
 
   </div>  <!--- end of modal content-->
 </div>
