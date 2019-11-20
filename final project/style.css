@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body{
+font-family: 'Roboto',sans-serif;
+background: url(img/test3.png) no-repeat center center fixed;
+background-size: cover;
+}
+
+
+h1{
+  margin-top:25px;
+font-family: 'Roboto',sans-serif;
+font-weight: 1000;
+color: #ffff;
+}
+
+h3{
+  margin-top:25px;
+  margin-bottom:25px;
+font-family: 'Roboto',sans-serif;
+
+color: #ffff;
+}
+.main-section {
+margin: 0 auto;
+margin-top: 130px;
+padding: 0;
+padding-top:;
+
+}
+.modal-content {
+  background-color: #3b4652;
+  opacity:.8;
+  padding:0 18px;
+  box-shadow: 0px 0px 3px #848484;
+
+
+}
+
+.user-img {
+  margin-top: -50px;
+  margin-bottom: 35px;
+  }
+
+  user-img img{
+  height:100px;
+  width:100px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 2px #848484;
+  }
+
+  .form-group{
+    margin-bottom: 25px;
+    margin-top: 25px;
+  }
+
+  .form-group input{
+    height: 42px;
+    border-radius: 5px;
+    border: 0;
+    font-size: 17px;
+    padding-left: 54px;
+
+  }
+
+  .form-group::before{
+    font-family: 'Font Awesome\ 5 Free';
+    content: "\f007";
+    position: absolute;
+    font-size: 22px;
+    color: #555e60;
+    left: 28px;
+    padding-top: 4px;
+  }
+
+  .form-group:last-of-type::before{
+    content: "\f023";
+  }
+
+  button{
+    width: 40%;
+    margin: 5px 0px 25px;
+    width: 40%;
+    margin: 5px 0px 25px;
+    background-color: #CA3864;
+    color: #fff;
+    font-size: 19px;
+    padding: 7px 14px;
+    border-radius: 5px;
+    border-bottom: 2.5px solid #fff;
+  }
+
+      .twofa{
+        padding-bottom: 8px;
+      }
+      .fail-screen{
+          color: #ffff;
+      }
+
+      .textarea{
+        color: #fff;
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+        .register-group{
+          margin-bottom: 25px;
+          margin-top: 25px;
+        }
+
+        .register-group input{
+          height: 42px;
+          border-radius: 5px;
+          border: 0;
+          font-size: 17px;
+
+
+        }
+
+        .register-group::before{
+          font-family: 'Font Awesome\ 5 Free';
+
+          position: absolute;
+          font-size: 22px;
+          color: #555e60;
+          left: 28px;
+          padding-top: 4px;
+        }
